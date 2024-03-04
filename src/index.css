@@ -6,4 +6,14 @@
   body {
     @apply w-full min-h-screen antialiased text-zinc-100 bg-zinc-900;
   }
+
+  button, input {
+    @apply focus:outline focus:outline-2 focus:outline-offset-2 outline-sky-500
+  }
+}
+
+@media (max-width: 768px ) {
+  html {
+    font-size: 87.5%;
+  }
 }
