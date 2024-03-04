@@ -6,37 +6,7 @@ import { Header } from './components/Header'
 import { EmptyList } from './components/Lists/EmptyList'
 import { Task, TaskType } from './components/Lists/Task'
 import { TaskTracker } from './components/Lists/TaskTracker'
-
-const mockedTasks = [
-  {
-    id: uuidv4(),
-    description:
-      '1 Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    isCompleted: false,
-    createdAt: new Date('2024-02-21T03:00:00.000Z'),
-  },
-  {
-    id: uuidv4(),
-    description:
-      '2 Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    isCompleted: true,
-    createdAt: new Date('2024-02-22T03:00:00.000Z'),
-  },
-  {
-    id: uuidv4(),
-    description:
-      '3 Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    isCompleted: false,
-    createdAt: new Date('2024-02-23T03:00:00.000Z'),
-  },
-  {
-    id: uuidv4(),
-    description:
-      '4 Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    isCompleted: true,
-    createdAt: new Date('2024-02-18T03:00:00.000Z'),
-  },
-]
+import { mockedTasks } from './mockTasks'
 
 export function App() {
   const [tasks, setTasks] = useState<TaskType[]>(mockedTasks)
@@ -121,7 +91,7 @@ export function App() {
 
         <div className="mt-6">
           {tasks.length > 0 ? (
-            <div ref={animateRef} className="space-y-3">
+            <div ref={animateRef} className="space-y-3 mb-4">
               {tasks
                 .sort((a, b) => {
                   if (a.isCompleted !== b.isCompleted) {
